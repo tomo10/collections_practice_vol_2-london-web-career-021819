@@ -39,11 +39,11 @@ def remove_non_strings(array)
 end
 
 def count_elements(array)
-  array.each_with_object(Hash.new(0)) do |item, hash|
-   
-  hash[item] += 1
+  
+ array.each_with_object(Hash.new(0)) { |g,h| h[g[:name]] += 1 }.
+    map { |name, count| { :name=>name, :count=>count } }
 
-  end
 end
+
 
 
